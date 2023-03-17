@@ -25,7 +25,10 @@ public class Pizza {
             this.baseprice = 400;
             this.extraToppingPrice = 120;
         }
-        this.price += baseprice;
+        this.extraCheesePrice = 80;
+        this.paperBagPrice = 20;
+        this.price = baseprice;
+
     }
 
     public int getPrice(){
@@ -36,7 +39,6 @@ public class Pizza {
         // your code goes here
         if(extraCheese==false)
         {
-            this.extraCheesePrice = 80;
             this.price += this.extraCheesePrice;
             this.extraCheese = true;
         }
@@ -46,18 +48,8 @@ public class Pizza {
         // your code goes here
         if(extraTopping==false)
         {
-            if(this.isVeg == true)
-            {
-                this.extraToppingPrice = 70;
-                this.price += this.extraToppingPrice;
-                this.extraTopping = true;
-            }
-            else
-            {
-                this.extraToppingPrice = 120;
-                this.price += this.extraToppingPrice;
-                this.extraTopping = true;
-            }
+            this.price += this.extraToppingPrice;
+            this.extraTopping = true;
         }
     }
 
@@ -65,9 +57,8 @@ public class Pizza {
         // your code goes here
         if(this.paperBag==false)
         {
-            this.paperBagPrice = 20;
             this.price += this.paperBagPrice;
-            this.paperBag = true;
+            paperBag = true;
         }
     }
 
